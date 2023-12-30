@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.1.1 (Python 3.9.13 on win32)" generated="20231123 16:40:16.243" rpa="false" schemaversion="4">
+<suite id="s1" name="Automatization" source="C:\QAx\projects\lab001\tests\automatization.robot">
+<test id="s1-t1" name="Gerando testes automatizados" line="9">
+<kw name="Name" library="FakerLibrary">
+<var>${NOMEFAKE}</var>
+<doc>:example: 'John Doe'</doc>
+<msg timestamp="20231123 16:40:25.583" level="INFO">${NOMEFAKE} = Beatriz Rocha</msg>
+<status status="PASS" starttime="20231123 16:40:25.583" endtime="20231123 16:40:25.583"/>
+</kw>
+<kw name="Phone Number" library="FakerLibrary">
+<var>${PHONENUMBER}</var>
+<msg timestamp="20231123 16:40:25.599" level="INFO">${PHONENUMBER} = +55 (071) 8047 1838</msg>
+<status status="PASS" starttime="20231123 16:40:25.583" endtime="20231123 16:40:25.599"/>
+</kw>
+<kw name="Email" library="FakerLibrary">
+<var>${EMAILFAKE}</var>
+<msg timestamp="20231123 16:40:25.653" level="INFO">${EMAILFAKE} = xferreira@example.com</msg>
+<status status="PASS" starttime="20231123 16:40:25.653" endtime="20231123 16:40:25.653"/>
+</kw>
+<kw name="Time" library="FakerLibrary">
+<var>${FAKETIME}</var>
+<doc>Get a time string (24h format by default)</doc>
+<msg timestamp="20231123 16:40:25.684" level="INFO">${FAKETIME} = 13:58:00</msg>
+<status status="PASS" starttime="20231123 16:40:25.684" endtime="20231123 16:40:25.684"/>
+</kw>
+<kw name="Texts" library="FakerLibrary">
+<var>${TEXTFAKE}</var>
+<doc>Generate a list of text strings.</doc>
+<msg timestamp="20231123 16:40:25.684" level="INFO">${TEXTFAKE} = ['Quia necessitatibus placeat voluptatem aspernatur veritatis. Amet esse ut ea exercitationem possimus magnam. Ea iusto optio esse porro assumenda.', 'Ex reiciendis vitae harum provident maiores.\nIll...</msg>
+<status status="PASS" starttime="20231123 16:40:25.684" endtime="20231123 16:40:25.684"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${nome}</var>
+<arg>${NOMEFAKE}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20231123 16:40:25.706" level="INFO">${nome} = Beatriz Rocha</msg>
+<status status="PASS" starttime="20231123 16:40:25.705" endtime="20231123 16:40:25.707"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${phone}</var>
+<arg>${PHONENUMBER}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20231123 16:40:25.758" level="INFO">${phone} = +55 (071) 8047 1838</msg>
+<status status="PASS" starttime="20231123 16:40:25.758" endtime="20231123 16:40:25.758"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${email}</var>
+<arg>${EMAILFAKE}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20231123 16:40:25.769" level="INFO">${email} = xferreira@example.com</msg>
+<status status="PASS" starttime="20231123 16:40:25.767" endtime="20231123 16:40:25.769"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${time}</var>
+<arg>${FakeTIME}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20231123 16:40:25.772" level="INFO">${time} = 13:58:00</msg>
+<status status="PASS" starttime="20231123 16:40:25.770" endtime="20231123 16:40:25.772"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${comments}</var>
+<arg>${TEXTFAKE}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20231123 16:40:25.778" level="INFO">${comments} = ['Quia necessitatibus placeat voluptatem aspernatur veritatis. Amet esse ut ea exercitationem possimus magnam. Ea iusto optio esse porro assumenda.', 'Ex reiciendis vitae harum provident maiores.\nIll...</msg>
+<status status="PASS" starttime="20231123 16:40:25.776" endtime="20231123 16:40:25.778"/>
+</kw>
+<kw name="Start suite de Testes" library="base">
+<kw name="New Browser" library="Browser">
+<arg>browser=chromium</arg>
+<arg>headless=False</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new playwright Browser with specified options.</doc>
+<msg timestamp="20231123 16:40:25.803" level="INFO">{"browser": "chromium", "headless": false, "chromiumSandbox": false, "devtools": false, "handleSIGHUP": true, "handleSIGINT": true, "handleSIGTERM": true, "slowMo": 0.0, "timeout": 30000.0, "tracesDir": "C:\\QAx\\projects\\lab001\\logs\\browser\\traces\\4b02e3bb-ecc8-4d0e-a509-fa1c1318e162"}</msg>
+<msg timestamp="20231123 16:40:29.925" level="INFO">Successfully created browser with options: {"browser":"chromium","headless":false,"chromiumSandbox":false,"devtools":false,"handleSIGHUP":true,"handleSIGINT":true,"handleSIGTERM":true,"slowMo":0,"timeout":30000,"tracesDir":"C:\\QAx\\projects\\lab001\\logs\\browser\\traces\\4b02e3bb-ecc8-4d0e-a509-fa1c1318e162"}</msg>
+<status status="PASS" starttime="20231123 16:40:25.803" endtime="20231123 16:40:29.925"/>
+</kw>
+<kw name="New Context" library="Browser">
+<arg>viewport={'width': 720, 'height': 650}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new BrowserContext with specified options.</doc>
+<msg timestamp="20231123 16:40:29.940" level="INFO">{
+  "acceptDownloads": true,
+  "bypassCSP": false,
+  "forcedColors": "none",
+  "hideRfBrowser": "",
+  "ignoreHTTPSErrors": false,
+  "javaScriptEnabled": true,
+  "offline": false,
+  "reducedMotion": "no-preference",
+  "serviceWorkers": "allow",
+  "viewport": {
+    "width": 720,
+    "height": 650
+  }
+}</msg>
+<msg timestamp="20231123 16:40:30.258" level="INFO">Successfully created context. </msg>
+<msg timestamp="20231123 16:40:30.258" level="INFO">{'acceptDownloads': True, 'bypassCSP': False, 'forcedColors': 'none', 'hideRfBrowser': '', 'ignoreHTTPSErrors': False, 'javaScriptEnabled': True, 'offline': False, 'reducedMotion': 'no-preference', 'serviceWorkers': 'allow', 'viewport': {'width': 720, 'height': 650}}</msg>
+<status status="PASS" starttime="20231123 16:40:29.940" endtime="20231123 16:40:30.258"/>
+</kw>
+<kw name="New Page" library="Browser">
+<arg>https://httpbin.org/forms/post</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Open a new Page.</doc>
+<msg timestamp="20231123 16:40:33.452" level="INFO">Successfully initialized new page object and opened url: https://httpbin.org/forms/post</msg>
+<status status="PASS" starttime="20231123 16:40:30.258" endtime="20231123 16:40:33.452"/>
+</kw>
+<kw name="Wait For Elements State" library="Browser">
+<arg>button</arg>
+<arg>visible</arg>
+<arg>10</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<msg timestamp="20231123 16:40:34.078" level="INFO">Waited for Element with selector button at state visible</msg>
+<status status="PASS" starttime="20231123 16:40:33.452" endtime="20231123 16:40:34.078"/>
+</kw>
+<kw name="Get Text" library="Browser">
+<arg>button</arg>
+<arg>equal</arg>
+<arg>Submit order</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<msg timestamp="20231123 16:40:34.250" level="INFO">Text: 'Submit order'</msg>
+<status status="PASS" starttime="20231123 16:40:34.078" endtime="20231123 16:40:34.250"/>
+</kw>
+<status status="PASS" starttime="20231123 16:40:25.803" endtime="20231123 16:40:34.250"/>
+</kw>
+<kw name="Preencher campos" library="automatization">
+<arg>${nome}</arg>
+<arg>${phone}</arg>
+<arg>${email}</arg>
+<arg>${time}</arg>
+<arg>${comments}</arg>
+<kw name="Fill Text" library="Browser">
+<arg>css=input[name="custname"]</arg>
+<arg>${nome}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<msg timestamp="20231123 16:40:34.266" level="INFO">Fills the text 'Beatriz Rocha' in the given field.</msg>
+<status status="PASS" starttime="20231123 16:40:34.266" endtime="20231123 16:40:34.435"/>
+</kw>
+<kw name="Fill Text" library="Browser">
+<arg>css=input[name="custtel"]</arg>
+<arg>${phone}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<msg timestamp="20231123 16:40:34.440" level="INFO">Fills the text '+55 (071) 8047 1838' in the given field.</msg>
+<status status="PASS" starttime="20231123 16:40:34.436" endtime="20231123 16:40:34.574"/>
+</kw>
+<kw name="Fill Text" library="Browser">
+<arg>css=input[name="custemail"]</arg>
+<arg>${email}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<msg timestamp="20231123 16:40:34.578" level="INFO">Fills the text 'xferreira@example.com' in the given field.</msg>
+<status status="PASS" starttime="20231123 16:40:34.576" endtime="20231123 16:40:34.685"/>
+</kw>
+<kw name="Click" library="Browser">
+<arg>css=input[value="small"]</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20231123 16:40:34.685" endtime="20231123 16:40:34.852"/>
+</kw>
+<kw name="Click" library="Browser">
+<arg>css=input[value="bacon"]</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20231123 16:40:34.853" endtime="20231123 16:40:34.966"/>
+</kw>
+<kw name="Click" library="Browser">
+<arg>css=input[value="cheese"]</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20231123 16:40:34.966" endtime="20231123 16:40:35.125"/>
+</kw>
+<kw name="Fill Text" library="Browser">
+<arg>css=input[name="delivery"]</arg>
+<arg>${time}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<msg timestamp="20231123 16:40:35.125" level="INFO">Fills the text '13:58:00' in the given field.</msg>
+<status status="PASS" starttime="20231123 16:40:35.125" endtime="20231123 16:40:35.233"/>
+</kw>
+<kw name="Fill Text" library="Browser">
+<arg>css=textarea[name="comments"]</arg>
+<arg>${comments}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<msg timestamp="20231123 16:40:35.236" level="INFO">Fills the text '['Quia necessitatibus placeat voluptatem aspernatur veritatis. Amet esse ut ea exercitationem possimus magnam. Ea iusto optio esse porro assumenda.', 'Ex reiciendis vitae harum provident maiores.\nIllum aperiam repudiandae doloremque harum voluptas. Praesentium eos sapiente ab laudantium minus voluptatem.', 'Sit architecto dolor voluptatem itaque aut. Rem sequi animi labore voluptatum eius vel.\nLaboriosam dolorum incidunt explicabo fuga.']' in the given field.</msg>
+<status status="PASS" starttime="20231123 16:40:35.234" endtime="20231123 16:40:35.349"/>
+</kw>
+<status status="PASS" starttime="20231123 16:40:34.250" endtime="20231123 16:40:35.349"/>
+</kw>
+<kw name="Salvar evidencia" library="automatization">
+<kw name="Take Screenshot" library="Browser">
+<tag>PageContent</tag>
+<doc>Takes a screenshot of the current window or element and saves it to disk.</doc>
+<msg timestamp="20231123 16:40:35.825" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="browser/screenshot/robotframework-browser-screenshot-1.png" target="_blank"&gt;&lt;img src="browser/screenshot/robotframework-browser-screenshot-1.png" width="800px"/&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20231123 16:40:35.532" endtime="20231123 16:40:35.825"/>
+</kw>
+<status status="PASS" starttime="20231123 16:40:35.532" endtime="20231123 16:40:35.826"/>
+</kw>
+<kw name="Enviar Formulario" library="base">
+<kw name="Click" library="Browser">
+<arg>css=button</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20231123 16:40:35.863" endtime="20231123 16:40:36.140"/>
+</kw>
+<status status="PASS" starttime="20231123 16:40:35.859" endtime="20231123 16:40:36.141"/>
+</kw>
+<status status="PASS" starttime="20231123 16:40:25.567" endtime="20231123 16:40:37.497"/>
+</test>
+<doc>Suite de Testes</doc>
+<status status="PASS" starttime="20231123 16:40:16.243" endtime="20231123 16:40:39.507"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Automatization">Automatization</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
