@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.1.1 (Python 3.12.1 on win32)" generated="20240116 00:14:44.034" rpa="false" schemaversion="4">
+<suite id="s1" name="Tests" source="D:\Qa\Qa_Testes_Automação\LabQA003\tests">
+<suite id="s1-s1" name="Signup" source="D:\Qa\Qa_Testes_Automação\LabQA003\tests\signup.robot">
+<test id="s1-s1-t1" name="Nao deve permitir cadastrar email duplicado" line="33">
+<kw name="Start Session" library="base">
+<kw name="New Browser" library="Browser">
+<arg>browser=chromium</arg>
+<arg>headless=False</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new playwright Browser with specified options.</doc>
+<msg timestamp="20240116 00:14:45.876" level="INFO">{"browser": "chromium", "headless": false, "chromiumSandbox": false, "devtools": false, "handleSIGHUP": true, "handleSIGINT": true, "handleSIGTERM": true, "slowMo": 0.0, "timeout": 30000.0, "tracesDir": "D:\\Qa\\Qa_Testes_Automa\u00e7\u00e3o\\LabQA003\\logs\\browser\\traces\\6065bc01-0b0f-4371-aab4-c84d4d3c72eb"}</msg>
+<msg timestamp="20240116 00:14:46.731" level="INFO">Successfully created browser with options: {"browser":"chromium","headless":false,"chromiumSandbox":false,"devtools":false,"handleSIGHUP":true,"handleSIGINT":true,"handleSIGTERM":true,"slowMo":0,"timeout":30000,"tracesDir":"D:\\Qa\\Qa_Testes_Automação\\LabQA003\\logs\\browser\\traces\\6065bc01-0b0f-4371-aab4-c84d4d3c72eb"}</msg>
+<status status="PASS" starttime="20240116 00:14:45.876" endtime="20240116 00:14:46.731"/>
+</kw>
+<kw name="New Page" library="Browser">
+<arg>http://localhost:3000</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Open a new Page.</doc>
+<msg timestamp="20240116 00:14:48.369" level="INFO">Successfully initialized new page object and opened url: http://localhost:3000</msg>
+<msg timestamp="20240116 00:14:48.369" level="INFO">No context was open. New context was automatically opened when this page is created.</msg>
+<status status="PASS" starttime="20240116 00:14:46.732" endtime="20240116 00:14:48.370"/>
+</kw>
+<status status="PASS" starttime="20240116 00:14:45.875" endtime="20240116 00:14:48.370"/>
+</kw>
+<kw name="Go To" library="Browser">
+<arg>http://localhost:3000/signup</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Navigates to the given ``url``.</doc>
+<msg timestamp="20240116 00:14:48.512" level="INFO">Successfully opened URL http://localhost:3000/signup</msg>
+<status status="PASS" starttime="20240116 00:14:48.370" endtime="20240116 00:14:48.513"/>
+</kw>
+<kw name="Wait For Elements State" library="Browser">
+<arg>css=h1</arg>
+<arg>visible</arg>
+<arg>5</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<msg timestamp="20240116 00:14:48.587" level="INFO">Waited for Element with selector css=h1 at state visible</msg>
+<status status="PASS" starttime="20240116 00:14:48.518" endtime="20240116 00:14:48.587"/>
+</kw>
+<kw name="Get Text" library="Browser">
+<arg>css=h1</arg>
+<arg>equal</arg>
+<arg>Faça seu cadastro</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<msg timestamp="20240116 00:14:48.639" level="INFO">Text: 'Faça seu cadastro'</msg>
+<status status="PASS" starttime="20240116 00:14:48.588" endtime="20240116 00:14:48.639"/>
+</kw>
+<kw name="Fill Text" library="Browser">
+<arg>css=#name</arg>
+<arg>${name}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<msg timestamp="20240116 00:14:48.640" level="INFO">Fills the text 'Robson Cerqueira' in the given field.</msg>
+<status status="PASS" starttime="20240116 00:14:48.640" endtime="20240116 00:14:48.690"/>
+</kw>
+<kw name="Fill Text" library="Browser">
+<arg>css=#email</arg>
+<arg>${email}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<msg timestamp="20240116 00:14:48.691" level="INFO">Fills the text 'robson@teste.com' in the given field.</msg>
+<status status="PASS" starttime="20240116 00:14:48.690" endtime="20240116 00:14:48.733"/>
+</kw>
+<kw name="Fill Text" library="Browser">
+<arg>css=#password</arg>
+<arg>${password}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<msg timestamp="20240116 00:14:48.734" level="INFO">Fills the text 'pwd123' in the given field.</msg>
+<status status="PASS" starttime="20240116 00:14:48.734" endtime="20240116 00:14:48.770"/>
+</kw>
+<kw name="Click" library="Browser">
+<arg>css=#buttonSignup</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20240116 00:14:48.770" endtime="20240116 00:14:48.882"/>
+</kw>
+<kw name="Wait For Elements State" library="Browser">
+<arg>css=.notice p</arg>
+<arg>visible</arg>
+<arg>5</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<msg timestamp="20240116 00:14:49.000" level="INFO">Waited for Element with selector css=.notice p at state visible</msg>
+<status status="PASS" starttime="20240116 00:14:48.885" endtime="20240116 00:14:49.000"/>
+</kw>
+<kw name="Get Text" library="Browser">
+<arg>css=.notice p</arg>
+<arg>equal</arg>
+<arg>Oops! Já existe uma conta com o e-mail informado.</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<msg timestamp="20240116 00:14:49.026" level="INFO">Text: 'Oops! Já existe uma conta com o e-mail informado.'</msg>
+<status status="PASS" starttime="20240116 00:14:49.001" endtime="20240116 00:14:49.026"/>
+</kw>
+<tag>dup</tag>
+<status status="PASS" starttime="20240116 00:14:45.871" endtime="20240116 00:14:49.026"/>
+</test>
+<doc>Cenários de teste de cadastro de usuários</doc>
+<status status="PASS" starttime="20240116 00:14:44.068" endtime="20240116 00:14:49.178"/>
+</suite>
+<status status="PASS" starttime="20240116 00:14:44.036" endtime="20240116 00:14:49.187"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">dup</stat>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Tests">Tests</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1" name="Signup">Tests.Signup</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
