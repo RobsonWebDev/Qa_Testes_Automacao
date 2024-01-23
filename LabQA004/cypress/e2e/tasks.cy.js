@@ -1,26 +1,28 @@
-describe('tasks', ()=> {
+/// <reference types="cypress" />
+
+describe('tarefas', ()=> {
 
     it('Deve fazer login com sucesso', () => {
-        cy.visit('http://localhost:3000')
+        cy.request({
+            url: 'http://localhost:3333/helper/tasks',
+            method: 'DELETE',
+            body: {
+                name : 'Ler um Livro de QA'
+            }
+        }).then(response => {
+            expect(response.status).to.eq(204)
+        })
+        
+        cy.visit('http://localhost:8080')
 
-        cy.get('#email').type('robson@teste.com')
+        cy.get('input[placeholder="Add a new Task"]')
+            .type('Ler um Livro de QA')
 
-        cy.get('#password').type('pwd123')
+        cy.contains('button', 'Create').click()
 
-        cy.contains('button', 'Entrar').click()
-
-        cy.contains('button', 'Nova tarefa').click()
-
-        cy.get('[data-testid="input-container"] > input')
-            .type('Ler um livro de QA')
-
-            cy.get('.sc-Axmtr').click()
+        cy.contains('main div p', 'Ler um Livro de QA')
+            .should('be.visible')
 
     })
-
-    // it('Deve poder cadastrar uma nova tarefa', () => {
-    //     cy.visit('http://localhost:3000/tasks')
-
-    // })
 
 })
