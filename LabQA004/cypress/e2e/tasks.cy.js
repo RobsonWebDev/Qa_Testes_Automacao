@@ -2,63 +2,31 @@
 
 describe('tarefas', ()=> {
 
-    it('Deve fazer login com sucesso', () => {
+    it('Deve criar uma nova Terefa', () => {
 
-        const taskname = 'Ler um Livro de QA'
+        const taskName = 'Ler um Livro de QA'
 
-        cy.request({
-            url: 'http://localhost:3333/helper/tasks',
-            method: 'DELETE',
-            body: {
-                name : taskname
-            }
-        }).then(response => {
-            expect(response.status).to.eq(204)
-        })
+        cy.removeTaskByName(taskName)
         
-        cy.visit('http://localhost:8080')
+        cy.createTask(taskName)
 
-        cy.get('input[placeholder="Add a new Task"]')
-            .type(taskname)
-
-        cy.contains('button', 'Create').click()
-
-        cy.contains('main div p', taskname)
+        cy.contains('main div p', taskName)
             .should('be.visible')
 
     })
 
-    it.only('Não deve permitir tarefa duplicada', () => {
+    it('Não deve permitir tarefa duplicada', () => {
 
         const task = {
             name : 'Estudar Javascript',
             is_done: false
         }
 
-        cy.request({
-            url: 'http://localhost:3333/helper/tasks',
-            method: 'DELETE',
-            body: {
-                name : task.name
-            }
-        }).then(response => {
-            expect(response.status).to.eq(204)
-        })
+        cy.removeTaskByName(task.name)
 
-        cy.request({
-            url: 'http://localhost:3333/tasks',
-            method: 'POST',
-            body: task
-        }).then(response => {
-            expect(response.status).to.eq(201)
-        })
+        cy.postTask(task)
 
-        cy.visit('http://localhost:8080')
-
-        cy.get('input[placeholder="Add a new Task"]')
-            .type(task.name)
-
-        cy.contains('button', 'Create').click()
+        cy.createTask(task.name)
 
         cy.get('.swal2-html-container')
             .should('be.visible')
