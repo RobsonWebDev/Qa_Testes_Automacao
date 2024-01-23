@@ -35,4 +35,10 @@ describe('tarefas', ()=> {
 
 
     })
+
+    it.only('Campo Obrigatorio', ()=> {
+        cy.createTask()
+
+        cy.isRequired('This is a required field')
+    })
 })
