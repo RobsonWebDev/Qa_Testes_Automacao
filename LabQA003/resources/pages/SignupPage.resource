@@ -2,7 +2,7 @@
 Documentation    Elementos e ações da página de cadastro
 
 Library        Browser
-Resource        ../env.robot
+Resource        ../env.resource
 
 *** Keywords ***
 Go to signup page
@@ -26,3 +26,10 @@ Notice should be
 
     Wait For Elements State        ${element}    visible      5
     Get Text                       ${element}    equal        ${expected_text}
+
+Alert should be
+    [Arguments]    ${expected_text}
+
+    Wait For Elements State    css=.alert-error >> text=${expected_text}
+    ...        visible        5
+    
