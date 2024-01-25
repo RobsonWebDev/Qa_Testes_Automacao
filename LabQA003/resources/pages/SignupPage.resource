@@ -19,17 +19,4 @@ Submit signup form
     Fill Text    css=#password    ${user}[password]
 
     Click    css=#buttonSignup
-Notice should be
-    [Arguments]    ${expected_text}
-
-    ${element}    Set Variable    css=.notice p
-
-    Wait For Elements State        ${element}    visible      5
-    Get Text                       ${element}    equal        ${expected_text}
-
-Alert should be
-    [Arguments]    ${expected_text}
-
-    Wait For Elements State    css=.alert-error >> text=${expected_text}
-    ...        visible        5
-    
+  
