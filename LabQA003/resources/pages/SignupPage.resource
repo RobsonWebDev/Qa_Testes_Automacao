@@ -19,4 +19,3 @@ Submit signup form
     Fill Text    css=#password    ${user}[password]
 
     Click    css=#buttonSignup
-  
