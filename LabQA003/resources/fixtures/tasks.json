@@ -20,5 +20,38 @@
             "name":"Recrutar novos meta humanos",
             "tags": []
         }
+    },
+    "tags_limit": {
+        "user": {
+            "name": "Carlos Vilagran",
+            "email": "kiko@televisa.com",
+            "password": "pwd123"
+        },
+        "task": {
+            "name":"Estudar Python",
+            "tags": ["python", "pip", "poo", "robot"]
+        }
+    },
+    "done": {
+        "user": {
+            "name": "Tony Stark",
+            "email": "tony@stark.com",
+            "password": "pwd123"
+        },
+        "task": {
+            "name":"Criar uma nova IA",
+            "tags": ["jarvis", "ultron", "ark"]
+        }
+    },
+    "delete": {
+        "user": {
+            "name": "Hank Pym",
+            "email": "hank@pymtech.com",
+            "password": "pwd123"
+        },
+        "task": {
+            "name":"Criar a IA do Ultron",
+            "tags": ["ultron", "ia"]
+        }
     }
 }
