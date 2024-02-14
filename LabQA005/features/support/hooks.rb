@@ -12,3 +12,8 @@ Before do
 
     @order = OrderPage.new
 end
+
+After do |scenario|
+    screenshot = page.save_screenshot("features/logs/screenshorts/#{scenario.__id__}.png")
+    attach(screenshot, "image/png", "Screenshot")
+end
